@@ -41,12 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Career.cs" />
+    <Compile Include="Entities\Coupon.cs" />
+    <Compile Include="Entities\Exam.cs" />
+    <Compile Include="Entities\ExamType.cs" />
+    <Compile Include="Entities\Login.cs" />
+    <Compile Include="Entities\Modality.cs" />
+    <Compile Include="Entities\Staff.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\StudentCareer.cs" />
+    <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\SubjectCareer.cs" />
+    <Compile Include="Entities\SubjectTeacher.cs" />
+    <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserType.cs" />
+    <Compile Include="Entities\Year.cs" />
+    <Compile Include="Enums\LoginResult.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

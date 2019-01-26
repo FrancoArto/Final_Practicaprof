@@ -12,6 +12,7 @@ namespace Model.Entities
         string Email { get; set; }
         string UserPassword { get; set; }
         DateTime LastLogin { get; set; }
+        int Status { get; set; }
         int TypeId { get; set;}
 
 
