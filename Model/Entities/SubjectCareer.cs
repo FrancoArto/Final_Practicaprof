@@ -8,7 +8,7 @@ namespace Model.Entities
 {
     public class SubjectCareer
     {
-        int SubjectId { get; set; }
-        int CareerId { get; set; }
+        public int SubjectId { get; set; }
+        public int CareerId { get; set; }
     }
 }

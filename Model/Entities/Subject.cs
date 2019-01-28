@@ -8,10 +8,10 @@ namespace Model.Entities
 {
     public class Subject
     {
-        int SubjectId { get; set; }
-        string Name { get; set; }
-        int WorkLoad { get; set; }
-        int ModalityId { get; set; }
-        int YearId { get; set; }
+        public int SubjectId { get; set; }
+        public string Name { get; set; }
+        public int WorkLoad { get; set; }
+        public int ModalityId { get; set; }
+        public int YearId { get; set; }
     }
 }

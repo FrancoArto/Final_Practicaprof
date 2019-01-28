@@ -8,8 +8,8 @@ namespace Model.Entities
 {
     public class StudentCareer
     {
-        int SubjectId { get; set; }
-        int StudentId { get; set; }
-        int YearOfInscription { get; set; }
+        public int SubjectId { get; set; }
+        public int StudentId { get; set; }
+        public int YearOfInscription { get; set; }
     }
 }

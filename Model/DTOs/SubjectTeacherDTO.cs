@@ -9,7 +9,7 @@ namespace Model.DTOs
 {
     public class SubjectTeacherDTO
     {
-        Subject Subject { get; set; }
-        Teacher Teacher { get; set; }
+        public Subject Subject { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

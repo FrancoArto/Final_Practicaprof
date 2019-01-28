@@ -9,8 +9,8 @@ namespace Model.DTOs
 {
     public class StudentCareerDTO
     {
-        Subject Subject { get; set; }
-        Student Student { get; set; }
-        int YearOfInscription { get; set; }
+        public Subject Subject { get; set; }
+        public Student Student { get; set; }
+        public int YearOfInscription { get; set; }
     }
 }

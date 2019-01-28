@@ -8,7 +8,7 @@ namespace Model.Entities
 {
     public class Year
     {
-        int YearId { get; set; }
-        string Name { get; set; }
+        public int YearId { get; set; }
+        public string Name { get; set; }
     }
 }

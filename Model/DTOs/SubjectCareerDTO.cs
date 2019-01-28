@@ -9,7 +9,7 @@ namespace Model.DTOs
 {
     public class SubjectCareerDTO
     {
-        Subject Subject { get; set; }
-        Career Career { get; set; }
+        public Subject Subject { get; set; }
+        public Career Career { get; set; }
     }
 }

@@ -8,9 +8,9 @@ namespace Model.Entities
 {
     public class Career
     {
-        int CareerId { get; set; }
-        string Name { get; set; }
-        string Resolution { get; set; }
-        int Duration { get; set; }
+        public int CareerId { get; set; }
+        public string Name { get; set; }
+        public string Resolution { get; set; }
+        public int Duration { get; set; }
     }
 }

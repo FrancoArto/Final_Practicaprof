@@ -10,11 +10,11 @@ namespace Model.DTOs
 {
     public class UserDTO
     {
-        int UserId { get; set; }
-        string Email { get; set; }
-        string UserPassword { get; set; }
-        DateTime LastLogin { get; set; }
-        UserStatus Status { get; set; }
-        UserType TypeId { get; set; }
+        public int UserId { get; set; }
+        public string Email { get; set; }
+        public string UserPassword { get; set; }
+        public DateTime LastLogin { get; set; }
+        public UserStatus Status { get; set; }
+        public UserType TypeId { get; set; }
     }
 }

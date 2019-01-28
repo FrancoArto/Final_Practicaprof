@@ -8,7 +8,7 @@ namespace Model.Entities
 {
     public class UserType
     {
-        int TypeId { get; set; }
-        string TypeName { get; set; }
+        public int TypeId { get; set; }
+        public string TypeName { get; set; }
     }
 }

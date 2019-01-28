@@ -9,14 +9,14 @@ namespace Model.DTOs
 {
     class ExamDTO
     {
-        int ExamId { get; set; }
-        DateTime Date { get; set; }
-        decimal Grade { get; set; }
-        string Description { get; set; }
-        ExamType Type { get; set; }
-        Subject Subject { get; set; }
-        Student Student { get; set; }
-        Staff Staff { get; set; }
-        Coupon Coupon { get; set; }
+        public int ExamId { get; set; }
+        public DateTime Date { get; set; }
+        public decimal Grade { get; set; }
+        public string Description { get; set; }
+        public ExamType Type { get; set; }
+        public Subject Subject { get; set; }
+        public Student Student { get; set; }
+        public Staff Staff { get; set; }
+        public Coupon Coupon { get; set; }
     }
 }

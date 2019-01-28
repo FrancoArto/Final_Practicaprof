@@ -8,12 +8,12 @@ namespace Model.Entities
 {
     public class User
     {
-        int UserId { get; set; }
-        string Email { get; set; }
-        string UserPassword { get; set; }
-        DateTime LastLogin { get; set; }
-        int Status { get; set; }
-        int TypeId { get; set;}
+        public int UserId { get; set; }
+        public string Email { get; set; }
+        public string UserPassword { get; set; }
+        public DateTime LastLogin { get; set; }
+        public int Status { get; set; }
+        public int TypeId { get; set;}
 
 
     }

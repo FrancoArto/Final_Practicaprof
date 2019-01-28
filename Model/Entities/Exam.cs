@@ -8,14 +8,14 @@ namespace Model.Entities
 {
     public class Exam
     {
-        int ExamId { get; set; }
-        DateTime Date { get; set; }
-        decimal Grade { get; set; }
-        string Description { get; set; }
-        int TypeId { get; set; }
-        int SubjectId { get; set; }
-        int StudentId { get; set; }
-        int StaffId { get; set; }
-        int CouponId { get; set; }
+        public int ExamId { get; set; }
+        public DateTime Date { get; set; }
+        public decimal Grade { get; set; }
+        public string Description { get; set; }
+        public int TypeId { get; set; }
+        public int SubjectId { get; set; }
+        public int StudentId { get; set; }
+        public int StaffId { get; set; }
+        public int CouponId { get; set; }
     }
 }

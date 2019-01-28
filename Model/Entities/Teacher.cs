@@ -8,11 +8,11 @@ namespace Model.Entities
 {
     public class Teacher
     {
-        int UserId { get; set; }
-        string Name { get; set; }
-        string LastName { get; set; }
-        DateTime BirthDate { get; set; }
-        string PhoneNumber { get; set; }
-        string Address { get; set; }
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
     }
 }

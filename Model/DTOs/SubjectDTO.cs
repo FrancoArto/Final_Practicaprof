@@ -9,10 +9,10 @@ namespace Model.DTOs
 {
     public class SubjectDTO
     {
-        int SubjectId { get; set; }
-        string Name { get; set; }
-        int WorkLoad { get; set; }
-        Modality ModalityId { get; set; }
-        Year YearId { get; set; }
+        public int SubjectId { get; set; }
+        public string Name { get; set; }
+        public int WorkLoad { get; set; }
+        public Modality ModalityId { get; set; }
+        public Year YearId { get; set; }
     }
 }

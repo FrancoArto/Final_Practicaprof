@@ -8,8 +8,8 @@ namespace Model.Entities
 {
     public class Modality
     {
-        int ModalityId { get; set; }
-        string Name { get; set; }
-        string Description { get; set; }
+        public int ModalityId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

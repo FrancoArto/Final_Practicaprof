@@ -8,7 +8,7 @@ namespace Model.Entities
 {
     public class Coupon
     {
-        int CouponId { get; set; }
-        string QR { get; set; }
+        public int CouponId { get; set; }
+        public string QR { get; set; }
     }
 }
