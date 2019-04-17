@@ -13,7 +13,7 @@ namespace Repositories.Interfaces
 
         List<Career> GetAll();
 
-        Career Modify(int careerId, Career career);
+        bool Modify(int careerId, Career career);
 
         bool Delete(int careerId);
 

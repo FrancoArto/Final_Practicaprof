@@ -28,33 +28,39 @@ namespace Repositories
 
 
                 //parameters
-                SqlParameter careerId = sqlcommand.CreateParameter();
-                careerId.ParameterName = "careerId";
-                careerId.SqlDbType = SqlDbType.Int;
-                careerId.Value = career.CareerId;
-                careerId.IsNullable = false;
+                SqlParameter name = sqlcommand.CreateParameter();
+                name.ParameterName = "name";
+                name.SqlDbType = SqlDbType.VarChar;
+                name.Value = career.Name;
+                name.IsNullable = false;
 
-                SqlParameter tourismPackageId = sqlcommand.CreateParameter();
-                tourismPackageId.ParameterName = "tourismPackageId";
-                tourismPackageId.SqlDbType = SqlDbType.Int;
-                tourismPackageId.Value = booking.TourismPackageId;
-                tourismPackageId.IsNullable = false;
+                SqlParameter resolution = sqlcommand.CreateParameter();
+                resolution.ParameterName = "resolution";
+                resolution.SqlDbType = SqlDbType.VarChar;
+                resolution.Value = career.Resolution;
+                resolution.IsNullable = false;
 
-                SqlParameter bookingDate = sqlcommand.CreateParameter();
-                bookingDate.ParameterName = "bookingDate";
-                bookingDate.SqlDbType = SqlDbType.Date;
-                bookingDate.Value = booking.BookingDate;
-                bookingDate.IsNullable = false;
+                SqlParameter duration = sqlcommand.CreateParameter();
+                duration.ParameterName = "duration";
+                duration.SqlDbType = SqlDbType.Int;
+                duration.Value = career.Duration;
+                duration.IsNullable = false;
 
 
 
-                sqlcommand.Parameters.Add(clientId);
-                sqlcommand.Parameters.Add(tourismPackageId);
-                sqlcommand.Parameters.Add(bookingDate);
+                sqlcommand.Parameters.Add(name);
+                sqlcommand.Parameters.Add(resolution);
+                sqlcommand.Parameters.Add(duration);
 
 
                 sqlcommand.Prepare();
-                sqlcommand.ExecuteNonQuery();
+                SqlDataReader sqldatareader = sqlcommand.ExecuteReader();
+
+                if (sqldatareader.Read())
+                {
+                    career.CareerId = sqldatareader.GetInt32(0);
+                }
+                return career;
             }
             catch (Exception ex)
             {
@@ -62,28 +68,207 @@ namespace Repositories
             }
             finally
             {
-                conexion.Close();
+                sqlConnection.Close();
             }
         }
 
         public bool Delete(int careerId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand sqlcommand = sqlConnection.CreateCommand();
+                sqlcommand.Connection = sqlConnection;
+                sqlcommand.CommandText = "Careers_Delete";
+                sqlcommand.CommandType = CommandType.StoredProcedure;
+
+
+                //parameters
+                SqlParameter id = sqlcommand.CreateParameter();
+                id.ParameterName = "careerId";
+                id.SqlDbType = SqlDbType.Int;
+                id.Value = careerId;
+                id.IsNullable = false;
+                
+                sqlcommand.Parameters.Add(id);
+
+                sqlcommand.Prepare();
+
+
+                if (sqlcommand.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
         public List<Career> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Career> careersList = new List<Career>();
+
+                sqlConnection.Open();
+
+                SqlCommand sqlcommand = sqlConnection.CreateCommand();
+                sqlcommand.Connection = sqlConnection;
+                sqlcommand.CommandText = "Careers_GetAll";
+                sqlcommand.CommandType = CommandType.StoredProcedure;
+
+                sqlcommand.Prepare();
+                SqlDataReader sqldatareader = sqlcommand.ExecuteReader();
+
+                while (sqldatareader.Read())
+                {
+                    int resultCareerId = sqldatareader.GetInt32(0);
+                    string name = sqldatareader.GetString(1);
+                    string resolution = sqldatareader.GetString(2);
+                    int duration = sqldatareader.GetInt32(3);
+
+                    Career career = new Career();
+                    career.CareerId = resultCareerId;
+                    career.Name = name;
+                    career.Resolution = resolution;
+                    career.Duration = duration;
+
+                    careersList.Add(career);
+                }
+                sqldatareader.Close();
+
+                return careersList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+
+                sqlConnection.Close();
+            }
         }
 
         public Career GetCareerById(int careerId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Career career = null;
+                sqlConnection.Open();
+
+                SqlCommand sqlcommand = sqlConnection.CreateCommand();
+                sqlcommand.Connection = sqlConnection;
+                sqlcommand.CommandText = "Careers_GetById";
+                sqlcommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramCareerId = sqlcommand.CreateParameter();
+                paramCareerId.ParameterName = "careerId";
+                paramCareerId.SqlDbType = SqlDbType.Int;
+                paramCareerId.Value = careerId;
+                paramCareerId.IsNullable = false;
+
+                sqlcommand.Parameters.Add(paramCareerId);
+
+                sqlcommand.Prepare();
+
+                SqlDataReader sqldatareader = sqlcommand.ExecuteReader();
+
+                if (sqldatareader.Read())
+                {
+                    int resultCareerId = sqldatareader.GetInt32(0);
+                    string name = sqldatareader.GetString(1);
+                    string resolution = sqldatareader.GetString(2);
+                    int duration = sqldatareader.GetInt32(3);
+
+                    career = new Career();
+                    career.CareerId = resultCareerId;
+                    career.Name = name;
+                    career.Resolution = resolution;
+                    career.Duration = duration;
+                }
+
+                sqldatareader.Close();
+                return career;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
-        public Career Modify(int careerId, Career career)
+        public bool Modify(int careerId, Career career)
         {
-            throw new NotImplementedException();
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand sqlcommand = sqlConnection.CreateCommand();
+                sqlcommand.Connection = sqlConnection;
+                sqlcommand.CommandText = "Careers_Modify";
+                sqlcommand.CommandType = CommandType.StoredProcedure;
+
+
+                //parameters
+                SqlParameter id = sqlcommand.CreateParameter();
+                id.ParameterName = "careerId";
+                id.SqlDbType = SqlDbType.Int;
+                id.Value = careerId;
+                id.IsNullable = false;
+
+                SqlParameter name = sqlcommand.CreateParameter();
+                name.ParameterName = "name";
+                name.SqlDbType = SqlDbType.VarChar;
+                name.Value = career.Name;
+                name.IsNullable = false;
+
+                SqlParameter resolution = sqlcommand.CreateParameter();
+                resolution.ParameterName = "resolution";
+                resolution.SqlDbType = SqlDbType.VarChar;
+                resolution.Value = career.Resolution;
+                resolution.IsNullable = false;
+
+                SqlParameter duration = sqlcommand.CreateParameter();
+                duration.ParameterName = "duration";
+                duration.SqlDbType = SqlDbType.Int;
+                duration.Value = career.Duration;
+                duration.IsNullable = false;
+
+
+
+                sqlcommand.Parameters.Add(id);
+                sqlcommand.Parameters.Add(name);
+                sqlcommand.Parameters.Add(resolution);
+                sqlcommand.Parameters.Add(duration);
+
+                sqlcommand.Prepare();
+
+                if (sqlcommand.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
     }
 }

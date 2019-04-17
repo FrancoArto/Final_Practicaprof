@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CareersRepository.cs" />
+    <Compile Include="CouponsRepository.cs" />
     <Compile Include="Interfaces\ICareersRepository.cs" />
+    <Compile Include="Interfaces\ICouponsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
