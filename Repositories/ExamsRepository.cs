@@ -335,6 +335,12 @@ namespace Repositories
 
 
                 //parameters
+                SqlParameter id = sqlcommand.CreateParameter();
+                id.ParameterName = "examId";
+                id.SqlDbType = SqlDbType.Int;
+                id.Value = examId;
+                id.IsNullable = false;
+
                 SqlParameter examDate = sqlcommand.CreateParameter();
                 examDate.ParameterName = "examDate";
                 examDate.SqlDbType = SqlDbType.Date;
@@ -385,6 +391,7 @@ namespace Repositories
 
 
 
+                sqlcommand.Parameters.Add(id);
                 sqlcommand.Parameters.Add(examDate);
                 sqlcommand.Parameters.Add(grade);
                 sqlcommand.Parameters.Add(description);
