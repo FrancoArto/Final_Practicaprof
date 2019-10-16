@@ -44,9 +44,13 @@
     <Compile Include="CareersRepository.cs" />
     <Compile Include="CouponsRepository.cs" />
     <Compile Include="ExamsRepository.cs" />
+    <Compile Include="ExamTypeRepository.cs" />
     <Compile Include="Interfaces\ICareersRepository.cs" />
     <Compile Include="Interfaces\ICouponsRepository.cs" />
     <Compile Include="Interfaces\IExamsRepository.cs" />
+    <Compile Include="Interfaces\IExamTypeRepository.cs" />
+    <Compile Include="Interfaces\IModalitiesRepository.cs" />
+    <Compile Include="ModalitiesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
