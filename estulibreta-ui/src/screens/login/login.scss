@@ -1,0 +1,32 @@
+@import "../../utils/css/variables.scss";
+
+.MuiGrid-container {
+  &.login-container {
+    align-self: center;
+    background: $box-background;
+    border-radius: rem-calc(12px);
+    display: flex;
+    height: fit-content;
+    justify-self: center;
+    padding: $spacing-lg;
+    width: 30%;
+
+    .field-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding-bottom: $spacing-md;
+    }
+
+    .buttons-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $spacing-md;
+
+        &__button {
+            width: 8rem;
+        }
+    }
+  }
+}

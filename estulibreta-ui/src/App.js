@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Login from "./screens/login";
+import { Grid } from "@material-ui/core";
 
-function App() {
+import './App.scss';
 
-  const [testState, setTestState] = useState(1);
-
+const App = () => {
   return (
-    <div className="App">
-      {testState}
-    </div>
+    <Grid container className="app">
+      <Login />
+    </Grid>
   );
-}
+};
 
 export default App;

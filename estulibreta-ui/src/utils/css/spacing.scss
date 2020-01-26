@@ -1,0 +1,7 @@
+@import './rem-calc.scss';
+//1rem = 16px
+
+$spacing-xs: rem-calc(8px);
+$spacing-sm: rem-calc(12px);
+$spacing-md: rem-calc(16px);
+$spacing-lg: rem-calc(20px);
