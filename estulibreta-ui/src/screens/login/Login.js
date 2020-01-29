@@ -21,7 +21,7 @@ const Login = () => {
   });
 
   return (
-    <Grid container className="login-container">
+    <Grid container className="login-container" xs={10} sm={6} lg={4}>
       <form onSubmit={formik.handleSubmit}>
         <Grid item xs={12} className="field-container">
           <TextField
