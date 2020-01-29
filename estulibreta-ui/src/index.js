@@ -4,11 +4,11 @@ import "./index.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ThemeProvider } from "@material-ui/styles";
-import theme from "./utils/theme";
+import theme from "./common/utils/theme";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <App athToken="1234" />
   </ThemeProvider>,
   document.getElementById("root")
 );

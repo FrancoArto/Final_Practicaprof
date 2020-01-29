@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { useFormik } from "formik";
 
-import labels from "../../utils/labels.json";
+import labels from "../../common/utils/labels.json";
 import "./login.scss";
 
 const Login = () => {
