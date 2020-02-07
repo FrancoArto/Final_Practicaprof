@@ -1,0 +1,22 @@
+@import "../../utils/css/variables.scss";
+
+.app-bar {
+	flex-grow: 1;
+
+	.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+		&__menu-button {
+			margin-right: $spacing-md;
+		}
+
+		&__title {
+			flex-grow: 1;
+		}
+
+		&__user-button {
+			justify-self: flex-end;
+		}
+	}
+}

@@ -1,5 +1,6 @@
 {
     "app.common.clear": "Limpiar",
+    "app.common.logout": "Cerrar sesión",
     "app.login.login": "Ingresar",
     "app.login.password": "Contraseña",
     "app.login.username": "Nombre de usuario"
