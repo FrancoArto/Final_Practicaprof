@@ -3,5 +3,8 @@
     "app.common.logout": "Cerrar sesión",
     "app.login.login": "Ingresar",
     "app.login.password": "Contraseña",
-    "app.login.username": "Nombre de usuario"
+    "app.login.username": "Nombre de usuario",
+    "app.sidePanel.myCodes": "Mis códigos",
+    "app.sidePanel.myData": "Mis datos",
+    "app.sidePanel.mySubjects": "Mis materias"
 }

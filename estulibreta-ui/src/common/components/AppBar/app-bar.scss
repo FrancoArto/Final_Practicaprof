@@ -6,7 +6,7 @@
 	.toolbar {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
 		&__menu-button {
 			margin-right: $spacing-md;
 		}
@@ -17,6 +17,12 @@
 
 		&__user-button {
 			justify-self: flex-end;
+		}
+
+		.app-logo {
+			max-height: rem-calc(60px);
+			max-width: 15%;
+			padding: $spacing-md 0;
 		}
 	}
 }

@@ -12,8 +12,9 @@ import labels from "../../utils/labels.json";
 
 import "./app-bar.scss";
 import { Hidden, CardMedia } from "@material-ui/core";
+import { APP_LOGO } from "../../utils/constants";
 
-const AppBar = ({ isLoggedIn, user: { firstName , lastName , role } }) => {
+const AppBar = ({ onMenuButtonClick, user: { firstName, lastName, role } }) => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
 
@@ -35,6 +36,7 @@ const AppBar = ({ isLoggedIn, user: { firstName , lastName , role } }) => {
 							className="toolbar__menu-button"
 							color="inherit"
 							aria-label="menu"
+							onClick={onMenuButtonClick}
 						>
 							<MenuIcon />
 						</IconButton>
@@ -42,41 +44,39 @@ const AppBar = ({ isLoggedIn, user: { firstName , lastName , role } }) => {
 							{`${firstName} ${lastName} - ${role}`}
 						</Typography>
 					</Hidden>
-          <Hidden smDown>
-            <CardMedia>LOGO</CardMedia>
-          </Hidden>
-					{isLoggedIn && (
-						<div className="toolbar__user-button">
-							<IconButton
-								aria-label="account of current user"
-								aria-controls="menu-appbar"
-								aria-haspopup="true"
-								onClick={handleMenu}
-								color="inherit"
-							>
-								<AccountCircle />
-							</IconButton>
-							<Menu
-								id="menu-appbar"
-								anchorEl={anchorEl}
-								anchorOrigin={{
-									vertical: "bottom",
-									horizontal: "middle"
-								}}
-								keepMounted
-								transformOrigin={{
-									vertical: "bottom",
-									horizontal: "middle"
-								}}
-								open={open}
-								onClose={handleClose}
-							>
-								<MenuItem onClick={handleClose}>
-									{labels["app.common.logout"]}
-								</MenuItem>
-							</Menu>
-						</div>
-					)}
+					<Hidden smDown>
+						<CardMedia className="app-logo" component="img" src={APP_LOGO} />
+					</Hidden>
+					<div className="toolbar__user-button">
+						<IconButton
+							aria-label="account of current user"
+							aria-controls="menu-appbar"
+							aria-haspopup="true"
+							onClick={handleMenu}
+							color="inherit"
+						>
+							<AccountCircle />
+						</IconButton>
+						<Menu
+							id="menu-appbar"
+							anchorEl={anchorEl}
+							anchorOrigin={{
+								vertical: "bottom",
+								horizontal: "left"
+							}}
+							keepMounted
+							transformOrigin={{
+								vertical: "bottom",
+								horizontal: "left"
+							}}
+							open={open}
+							onClose={handleClose}
+						>
+							<MenuItem onClick={handleClose}>
+								{labels["app.common.logout"]}
+							</MenuItem>
+						</Menu>
+					</div>
 				</Toolbar>
 			</AppBarComponent>
 		</div>
