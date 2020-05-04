@@ -13,7 +13,12 @@ const history = createBrowserHistory();
 const user = {
 	firstName: "Franco",
 	lastName: "Arto",
-	role: "Alumno"
+	approvedSignatures: '5',
+	career: 'Analista de sistemas',
+	document: '38497299',
+	fileNumber: '123456',
+	role: "Alumno",
+	birthDate: '09/01/1994',
 };
 
 const Layout = () => {
@@ -29,7 +34,7 @@ const Layout = () => {
 					<Router history={history}>
 						<Switch>
 							<Route path="/">
-								<UserInfo />
+								<UserInfo user={user} />
 							</Route>
 						</Switch>
 					</Router>

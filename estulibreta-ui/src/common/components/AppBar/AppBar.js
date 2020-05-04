@@ -25,7 +25,7 @@ const AppBar = ({ onMenuButtonClick, user: { firstName, lastName, role } }) => {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
-
+	// TODO: avatar instead of user icon
 	return (
 		<div className="app-bar">
 			<AppBarComponent position="static">

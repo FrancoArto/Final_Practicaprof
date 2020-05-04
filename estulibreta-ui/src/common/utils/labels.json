@@ -6,5 +6,11 @@
     "app.login.username": "Nombre de usuario",
     "app.sidePanel.myCodes": "Mis códigos",
     "app.sidePanel.myData": "Mis datos",
-    "app.sidePanel.mySubjects": "Mis materias"
+    "app.sidePanel.mySubjects": "Mis materias",
+    "app.userInfo.approvedSignatures": "Materias aprobadas",
+    "app.userInfo.birthDate": "Fecha de nacimiento",
+    "app.userInfo.career": "Carrera",
+    "app.userInfo.document": "DNI",
+    "app.userInfo.file": "Legajo",
+    "app.userInfo.fullName": "Nombre completo"
 }
